@@ -1,212 +1,416 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Лабораторная работа 1</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffc7fb;
-            margin: 0;
-            padding: 0;
-        } 
-        header{ 
-            display: flex;
-            font-size: 16px;
-        }
-        h1{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: #f370ff;
-            color: white;
-            width: 600px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
-        nav{
-            font-family:'Courier New', Courier, monospace;
-            background-color: #f691ff;
-            display: flex;
-            align-items: center;
-            width: 900px;
-            height: 100px;
-            justify-content: center;
-        }
-        nav ul {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            margin-right: 100px;
-        }
-        nav li {
-            display: inline;
-            margin-right: 40px;
-            font-size: 30px;
-        }
-        main{
-            padding: 10px;
-            display: flex;  
-        }
-        aside {
-            width: 22%;
-            background-color: #fff0ff;
-            padding: 20px;
-            border-left: 4px solid #e050ad;
-        }
-        article{
-            margin-bottom: 40px;
-            background-color: #f478ff;
-            
-        }
-        h2{
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            background-color: #f478ff;
-            font-size: 40px;
-            justify-content: center;
-            display: flex;
-            color: white;
-        }
-        section{
-            margin-bottom: 20px;
-            background-color: #fde2ff;
-            font-size: 20px;
-        }
-        img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-        }
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 80%;
-        }
-        th {
-            background-color: #f370ff;
-            color: white;
-            padding: 10px;
-            border: 7px solid #803a74;
-        }
-        td {
-            padding: 8px;
-            border: 7px solid #803a74;
-        }
-        h3{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 24px;
-            color:rgb(101, 102, 102);
-        }
-        footer{
-            font-family: 'Times New Roman', Times, serif;
-            background-color: #6c3d71;
-            color:white;
-            text-align: center;
-            padding: 15px;
-            font-size: 20px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Фуфелшмерц Пакостин Инкорпорейтед™</title>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #1E1E2F;
+      color: #F2F2F7;
+      line-height: 1.35;
+    }
+    a{color:inherit}
+
+    .promo{
+      background: #6A0DAD;
+      padding: 30px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      font-size: 48px;
+      font-weight: 900;
+    }
+    .promo b{color: #7CFC00}
+    .timer{
+      font-variant-numeric: tabular-nums;
+      padding:12px 24px;
+      background: rgb(255, 0, 0);
+      font-size: 48px;
+      font-weight: 900;
+    }
+
+    header{
+      padding: 16px 14px 10px;
+    }
+    .header-inner{
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    h1{
+      margin:0;
+      font-size: clamp(18px, 3.6vw, 32px);
+      text-transform:uppercase;
+      line-height:1.05;
+    }
+    .slogan{
+      margin:6px 0 0;
+      color: #7CFC00;
+      font-weight: 700;
+      text-transform:uppercase;
+      letter-spacing:.2px;
+    }
+    .top-link{
+      text-decoration:none;
+      background:#7CFC00;
+      color:#101018;
+      padding:10px 12px;
+      font-weight:800;
+      text-transform:uppercase;
+      border: 1px solid rgba(0,0,0,.2);
+      white-space:nowrap;
+    }
+
+    main{
+      max-width:1200px;
+      margin: 0 auto;
+      padding: 10px 14px 24px;
+      display:grid;
+      grid-template-columns: 220px 1fr 220px;
+      gap:20px;
+      align-items:start;
+    }
+
+    .sidebar{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .ad{
+      background: rgb(255, 255, 255);
+      padding: 12px;
+      cursor:pointer;
+      min-height: 220px;
+    }
+    .ad-title{
+      margin:0 0 6px;
+      font-size: 14px;
+      text-transform:uppercase;
+      letter-spacing:.3px;
+      color:black;
+      font-weight:700;
+    }
+    .ad p{margin:0;color:black;font-size: 13px}
+
+    .content{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .card{
+      background: #2B2B44;
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 14px;
+    }
+    .card h2, .card h3{margin:0 0 10px;text-transform:uppercase}
+    .muted{color:#C9C9D6}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .photo-box{
+      min-height: 240px;
+      display:grid;
+      place-items:center;
+      padding: 12px;
+    }
+    .photo-box img{
+      max-width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .bullets{
+      margin:0;
+      padding: 0 0 0 18px;
+      display:grid;
+      gap:6px;
+      font-weight: 650;
+    }
+    .price-row{
+      margin-top: 10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .price{
+      display:flex;
+      gap:10px;
+      align-items:baseline;
+      font-weight:800;
+    }
+    .old{color:#C9C9D6; text-decoration: line-through}
+    .new{color: #7CFC00; font-size: 22px}
+    .btn{
+      text-decoration:none;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.12);
+      padding: 10px 12px;
+      font-weight: 800;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .reasons-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .reason{
+      background: rgba(0,0,0,.14);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 12px;
+    }
+    .reason h4{margin:0 0 6px}
+    .reason p{margin:0;color:#C9C9D6}
+
+    .chant-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .chant{
+      flex: 1 1 220px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 10px 12px;
+      font-weight: 750;
+    }
+
+    .reviews{
+      display:grid;
+      gap:12px;
+    }
+    .review{
+      background: rgba(0,0,0,.14);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 12px;
+    }
+    .stars{color:#FFE600; font-weight:800}
+    .quote{margin:8px 0 6px; font-weight:700}
+    .who{margin:0;color:#C9C9D6}
+
+    .ad-img{
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 8px;
+      border-radius: 6px;
+    }
+
+    footer{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 14px 20px;
+      text-align:center;
+      color: #C9C9D6;
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px){
+      main{grid-template-columns: 1fr;}
+      .sidebar{
+        order: 2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .content{order: 1;}
+    }
+    @media (max-width: 720px){
+      .hero-grid{grid-template-columns: 1fr;}
+      .reasons-grid{grid-template-columns: 1fr;}
+      .chant{flex-basis: 100%;}
+      .top-link{width:100%; text-align:center;}
+    }
+    @media (max-width: 360px){
+      .sidebar{grid-template-columns: 1fr;}
+    }
+  </style>
 </head>
+
 <body>
-    <header><h1>моя любимая пони рейнбоудеш</h1>
-        <nav>
-            <ul>
-                <li><a href ='#jokes'>Анекдоты</a></li>
-                <li><a href ='#video'>Видео</a></li>
-                <li><a href ='#RPL'>РПЛ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h2>Лабораторная работа 1</h2>
-        
-        <article id = "jokes">
-            <h2>Анекдоты</h2>
-            <section>
-                <h3>Анекдот 1:</h3><p> Поймал старик золотую рыбку.
-
-                    — Отпусти меня, старче, три желания исполню!
-
-                    — Зашибись! — сказал старик.
-
-                    И зашиблась бедная рыбка, так и не исполнив два другие желания.</p>
-                <img src="https://avatars.mds.yandex.net/i?id=386b7f302398023aaafa91dd6198236b1403a9fb-5467799-images-thumbs&n=13" alt="Анекдот 1">
-            </section>
-
-            <section>
-                <h3>Анекдот 2:</h3><p> Робин Гуд впадал в ступор, встречая людей среднего достатка.</p>
-                <img src="https://img.freepik.com/vector-premium/alegre-personaje-dibujos-animados-robin-hood-sonriendo-estilo-plano-2d_1120558-33311.jpg" alt="Анекдот 2">
-            </section>
-
-            <section>
-                <h3>Анекдот 3:</h3><p>Однажды я запустил бумеранг, и он не вернулся. С тех пор я каждый день живу в страхе.</p>
-                <img src="https://yandex-images.clstorage.net/9qbiV7372/c0eb07oMl5ra/svrYqipGq2gyw6OJM2Wou4G9Rb8g9jYmoSMJjHVpaFsilL_415O6f5S4BwaGDSphyBowuRazjct4RX8u2CIL_yP-HM47M35sUybjCQM1iW5VjFR6gLPngoTj6Nmg-Y1-RAcoatA1bcmzv2DB8tiv4d3esShX1fsqSPDMb-rn2Wshefl6XyariRYC8pmgRml8En1meaIhZJRXgZuM4J9IO7UmmJnjtO9psYyzcnIZz3C87kcK9dVrrHlAze_5Janr4ctJy381WbslouKZAwcLDyEvZllAoYREh7Ga3LKMuLhWlHiYg5QvWuJNgxBz-AwAvB0m2BfnK3yJwM3uiFQoGePp-pnOR9vYBTGR2bN0e__xHjVZMSDX1vSTWwwjTnkK17XJeOBUTZhxPGFzkgg9o6yfVUnkZ1uuihC-Dmq3ODnh2ZuYLSYqq1Uyw8kwpFnu8f91uuPhJNXG0wj-giy5SEXXufihlE27szyBUTFY_KGPL6Sb5uTI_Ojy3fw4NQtaI6qZyUxFO-sVYqFqsITKDCI9pKmSwoR1piNK7vGfaQgF1liLs0cMSvH9koFD67-DfZ-lGQWHWj0qArwuCLV7OSC4qoq8xBu5tsLSuRBnij9RnfVrIpCVh7bSGtxiLLto92aaGJMH7wpDrGNygXs9ge_ftVtn5mn8uSK_3Is0m_owK0rb7mcL2WViYKqRt4oMwa31-XIhF_VF4LpO4U3J6dWXuooQdf27o3yDcWHZrWPtTbTJZwUJ7SoSX-5YN-tagfiJuQyFewmnYCL78ZTbHeJ8JFpTcpcn9mBrztEdOKpX1ejo4PYfi9HMUVBhihxhz8w2ubRHms3ZAD0_q_S7aJCLqPud99h7lzJR-vA1eg5QbBbZsnBnp7WQmQ7QDSlZxVQ46lN2PQnT7kHxktncQIz-txtFxFoPKXIP7hiVKdvQy4j5z8drm9RA08tzlSidga8nWqDS5GY2wyl_I" alt="Анекдот 3">
-            </section>
-        </article>
-
-        <article id = "video">
-            <h2>Последнее просмотренное видео</h2>
-            <section>
-                <a href="https://www.youtube.com/watch?v=vMgLCoIUJi0">
-                    <h3>ИЛОН МАСК. Инженер, тролль или политик? | ФАЙБ</h3>
-                </a>
-                <p>Видеоролик исследует, что движет Маском, его ценности и психологические травмы.</p>
-                <h3>Мой отзыв</h3>
-                <p>Интересный видеоролик, позволяющий лучше понять одного из самых богатых и обсуждаемых людей планеты, который порой делает странные вещи. 
-                    В видео не просто какие-то интересные факты, но и психологический разбор личности Илона.
-                </p>
-                <h3>Цитаты</h3>
-                    <ul>
-                    <li><q>Его шутки в Твиттере могут иметь серьёзные последствия, включая обрушение фондового рынка.</q></li>
-                    <li><q>В начале карьеры Маск активно вмешивался в работу программистов, ожидая, что они будут мыслить как он.</q></li>
-                    <li><q>Персонаж Роберта Дауни-младшего в «Железном человеке» частично списан с Илона Маска.</q></li>
-                    <li><q>Он может быть бесчеловечным с сотрудниками, но его волнуют глобальные проблемы.</q></li>
-                    </ul>
-            </section>
-        </article>
-
-        <article id="RPL">
-            <h2>Расписание матчей</h2>
-            <section>
-            <h3> Оренбург</h3>
-                <table>
-                <caption>Матчи январь-февраль</caption>
-                <colgroup span="4" style="background:rgb(229, 198, 235); width: 150px; font-size: 16px;">
-                </colgroup>
-                <thead>
-                <tr>
-                <th>Дата</th>
-                <th>Время</th>
-                <th>Соперник</th>
-                <th>Счёт</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                <td>28.02.2026</td>
-                <td>12:00</td>
-                <td>Акрон</td>
-                <td>Ещё не состоялся</td>
-                </tr>
-                </tbody>
-                </table>
-            </section>
-        </article>
+  <section class="promo">
+    <section class="promo-inner">
+      <section>
+        <b>Скидка “на пакости”</b> закончится через
+        <span class="timer" id="timer">01:00:00</span>
+      </section>
     </section>
+  </section>
 
-    <aside>
-        <h3>Дополнительная информация</h3>
-        <p>Мне не хватает строк в теге style </p>
-        <p>Поэтому я решила добавить боковую панель.</p>
+  <header>
+    <section class="header-inner">
+        <section>
+          <h1>Фуфелшмерц Пакостин Инкорпорейтед</h1>
+          <p class="slogan">Будь ты проклят пери утконос.</p>
+        </section>
+      <a class="top-link" href="#reasons">Купить пакость</a>
+    </section>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <section class="ad">
+        <img class="ad-img" src="https://storage.mrgeek.ru/VmdcchEJg7IumP99o4-x-ukIlGralhUrmHUhKPlOj4U/fit/1080/1080/no/1/aHR0cHM6Ly9tcmdlZWsucnUvaW1hZ2VzL3Byb2R1Y3RfcGljdHVyZXNfbmV3LzIwMDAvMjQwMC8yNDYxL3Byb2R1Y3RfcGljdHVyZXMvb3JpZ2luYWwvMjQ2MS0xLmpwZw.jpg" alt="Реклама">
+        <section class="ad-title">Живот уйдёт за неделю!</section>
+        <p>Нужно лишь 2 раза в день выпивать...</p>
+      </section>
+      <section class="ad">
+        <img class="ad-img" src="https://mainstyles.ru/media/cache/default/rc/JnZtLnH2/TOP_4_predskazaniya_Mishel_Nostradamusa_o_vstrechakh_01_Mainstyle.webp" alt="Реклама">
+        <section class="ad-title">Нострадамус:</section>
+        <p>"Скоро в Европе исчезнет 3 страны. Это..."</p>
+      </section>
+      <section class="ad">
+        <img class="ad-img" src="https://i.pinimg.com/originals/cd/44/ec/cd44ec18f63b816b0b292ecb17188a57.jpg" alt="Реклама">
+        <section class="ad-title">Католики ШОКИРОВАНЫ заявлением Коперника!</section>
+        <p>Земля на самом деле...</p>
+      </section>
     </aside>
 
-    </main>
-    <footer>
-        <p>и еще губку боба люблю</p>
-    </footer>
+    <article class="content">
+      <section class="card">
+        <section class="hero-grid">
+          <section class="photo-box">
+            <img src="https://i.pinimg.com/236x/69/a7/0e/69a70e4cbaed561019d0a3be3d060b0e.jpg" alt="Фуфелшмерц">
+          </section>
+          <section>
+            <h2>Индивидуальная пакость</h2>
+            <p class="muted">
+              Фуфелшмрец поможет с пакостью лично.
+            </p>
+            <ul class="bullets">
+              <li>Быстро</li>
+              <li>Индивидуальный подход</li>
+              <li>Помогает со злодеяниями</li>
+              <li>Прекрасный акцент</li>
+            </ul>
+            <section class="price-row">
+              <section class="price">
+                <span class="old">199999₽</span>
+                <span class="new">1999₽</span>
+              </section>
+              <a class="btn" href="#reasons">почему тебе надо</a>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <section class="card" id="reasons">
+        <h3>Зачем же нужен заказ Пакости?</h3>
+        <section class="reasons-grid">
+          <section class="reason">
+            <h4>1) Не нужно думать</h4>
+            <p>Наш специалист решит вопрос за вас.</p>
+          </section>
+          <section class="reason">
+            <h4>2) Широкий спект услуг</h4>
+            <p>От самой обычной маленькой пакости до порабощения мира</p>
+          </section>
+          <section class="reason">
+            <h4>3) Чтобы устроить драму</h4>
+            <p>Немного хаоса — это тоже план.</p>
+          </section>
+          <section class="reason">
+            <h4>4) Чтобы всё было по-злодейски</h4>
+            <p>Без четкого плана пакость выглядит как бытовая проблема.</p>
+          </section>
+          <section class="reason">
+            <h4>5) Потому что скидка</h4>
+            <p>Если не купишь — купит кто-то более злодейский.</p>
+          </section>
+        </section>
+      </section>
+
+      <section class="card">
+        <h3>Фуфелшмерц рекомендует себя</h3>
+        <section class="chant-row">
+          <section class="chant">Пакость - это инвестиция!</section>
+          <section class="chant">Будь злым. Будь стильным.</section>
+          <section class="chant">Испорти самый лучший день.</section>
+          <section class="chant">Не вышло? Значит, по плану.</section>
+        </section>
+      </section>
+
+      <article class="card">
+        <h3>Отзывы покупателей</h3>
+        <section class="reviews">
+          <section class="review">
+            <section class="stars">★★★★★</section>
+            <p class="quote">“Заказал. Теперь на всех компьютерах вирус <a href="https://www.youtube.com/watch?v=srAzlF4VcCA" target="_blank">"видео доказательство"</a> ”</p>
+            <p class="who">— Балжит</p>
+          </section>
+          <section class="review">
+            <section class="stars">★★★★☆</section>
+            <p class="quote">“Сосед перестал со мной общаться. Работает.”</p>
+            <p class="who">— Хью</p>
+          </section>
+          <section class="review">
+            <section class="stars">★★★★★</section>
+            <p class="quote">“Мама думает что сестра сумасшедшая.”</p>
+            <p class="who">— Финес</p>
+          </section>
+        </section>
+      </article>
+    </article>
+
+    <aside class="sidebar">
+      <section class="ad">
+        <img class="ad-img" src="https://yt3.googleusercontent.com/ytc/AIdro_n8qI629TYYfy45KPYEmvEy4jGrWIPm66Hp9qc0eJ3wZA=s900-c-k-c0x00ffffff-no-rj" alt="Реклама">
+        <section class="ad-title">Реальная история ростовской толстушки!</section>
+        <p>МИНУС 25 кг за месяц! Просто по утрам пейте один стакан...</p>
+      </section>
+      <section class="ad">
+        <img class="ad-img" src="https://avatars.dzeninfra.ru/get-zen_doc/5233024/pub_62b3684295775b0b9178f757_62b3684de1a1d65580b4e2c4/scale_1200" alt="Реклама">
+        <section class="ad-title">ЖКХ годами УМАЛЧИВАЛ</section>
+        <p>Об этом простом способе экономии воды. Читать...</p>
+      </section>
+      <section class="ad">
+        <img class="ad-img" src="https://avatars.mds.yandex.net/i?id=02d40f93bd6bfe77a7387044a0aa59c7_sr-4077540-images-thumbs&n=13" alt="Реклама">
+        <section class="ad-title">СУМАСШЕДШАЯ новость!</section>
+        <p>Оказалось, чтобы не ХРАПЕТЬ, нужно пользоваться...</p>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    © Фуфелшмерц Пакостин Инкорпорейтед™
+  </footer>
+
+  <script>
+    const timerEl = document.getElementById("timer");
+    let totalSeconds = 60 * 60;
+
+    function updateTimer() {
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      const formatted =
+        String(hours).padStart(2, "0") + ":" +
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
+
+      timerEl.textContent = formatted;
+
+      totalSeconds--;
+      if (totalSeconds < 0) totalSeconds = 60 * 60;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
 </body>
 </html>
