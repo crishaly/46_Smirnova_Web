@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа 1</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffc7fb;
+            margin: 0;
+            padding: 0;
+        } 
+        header{ 
+            display: flex;
+            font-size: 16px;
+        }
+        h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #f370ff;
+            color: white;
+            width: 600px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            font-family:'Courier New', Courier, monospace;
+            background-color: #f691ff;
+            display: flex;
+            align-items: center;
+            width: 900px;
+            height: 100px;
+            justify-content: center;
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-right: 100px;
+        }
+        nav li {
+            display: inline;
+            margin-right: 40px;
+            font-size: 30px;
+        }
+        main{
+            padding: 10px;
+            display: flex;  
+        }
+        aside {
+            width: 22%;
+            background-color: #fff0ff;
+            padding: 20px;
+            border-left: 4px solid #e050ad;
+        }
+        article{
+            margin-bottom: 40px;
+            background-color: #f478ff;
+            
+        }
+        h2{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: #f478ff;
+            font-size: 40px;
+            justify-content: center;
+            display: flex;
+            color: white;
+        }
+        section{
+            margin-bottom: 20px;
+            background-color: #fde2ff;
+            font-size: 20px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th {
+            background-color: #f370ff;
+            color: white;
+            padding: 10px;
+            border: 7px solid #803a74;
+        }
+        td {
+            padding: 8px;
+            border: 7px solid #803a74;
+        }
+        h3{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            color:rgb(101, 102, 102);
+        }
+        footer{
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #6c3d71;
+            color:white;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+        }
+        .game-button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            font-size: 18px;
+            background-color: #ff8ae8;
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .game-button:hover {
+            background-color: #f370ff;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>моя любимая пони рейнбоудеш</h1>
+        <nav>
+            <ul>
+                <li><a href ='#jokes'>Анекдоты</a></li>
+                <li><a href ='#video'>Видео</a></li>
+                <li><a href ='#RPL'>РПЛ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Лабораторная работа 1</h2>
+        
+        <article id = "jokes">
+            <h2>Анекдоты</h2>
+            <section>
+                <h3>Анекдот 1:</h3><p> Поймал старик золотую рыбку.
+
+                    — Отпусти меня, старче, три желания исполню!
+
+                    — Зашибись! — сказал старик.
+
+                    И зашиблась бедная рыбка, так и не исполнив два другие желания.</p>
+                <img src="images\ded.webp" alt="Анекдот 1">
+            </section>
+
+            <section>
+                <h3>Анекдот 2:</h3><p> Робин Гуд впадал в ступор, встречая людей среднего достатка.</p>
+                <img src="images\robin.avif" alt="Анекдот 2">
+            </section>
+
+            <section>
+                <h3>Анекдот 3:</h3><p>Однажды я запустил бумеранг, и он не вернулся. С тех пор я каждый день живу в страхе.</p>
+                <img src="images\laugh.webp" alt="Анекдот 3">
+            </section>
+        </article>
+
+        <article id = "video">
+            <h2>Последнее просмотренное видео</h2>
+            <section>
+                <a href="https://www.youtube.com/watch?v=vMgLCoIUJi0" target="_blank">
+                    <h3>ИЛОН МАСК. Инженер, тролль или политик? | ФАЙБ</h3>
+                </a>
+                <p>Видеоролик исследует, что движет Маском, его ценности и психологические травмы.</p>
+                <h3>Мой отзыв</h3>
+                <p>Интересный видеоролик, позволяющий лучше понять одного из самых богатых и обсуждаемых людей планеты, который порой делает странные вещи. 
+                    В видео не просто какие-то интересные факты, но и психологический разбор личности Илона.
+                </p>
+                <h3>Цитаты</h3>
+                    <ul>
+                    <li><q>Его шутки в Твиттере могут иметь серьёзные последствия, включая обрушение фондового рынка.</q></li>
+                    <li><q>В начале карьеры Маск активно вмешивался в работу программистов, ожидая, что они будут мыслить как он.</q></li>
+                    <li><q>Персонаж Роберта Дауни-младшего в «Железном человеке» частично списан с Илона Маска.</q></li>
+                    <li><q>Он может быть бесчеловечным с сотрудниками, но его волнуют глобальные проблемы.</q></li>
+                    </ul>
+            </section>
+        </article>
+
+        <article id="RPL">
+            <h2>Расписание матчей</h2>
+            <section>
+            <h3> Оренбург</h3>
+                <table>
+                <caption>Матчи январь-февраль</caption>
+                <colgroup span="4" style="background:rgb(229, 198, 235); width: 150px; font-size: 16px;">
+                </colgroup>
+                <thead>
+                <tr>
+                <th>Дата</th>
+                <th>Время</th>
+                <th>Соперник</th>
+                <th>Счёт</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>28.02.2026</td>
+                <td>12:00</td>
+                <td>Акрон</td>
+                <td>Ещё не состоялся</td>
+                </tr>
+                </tbody>
+                </table>
+            </section>
+        </article>
+    </section>
+
+    <aside>
+        <h3>Дополнительная информация</h3>
+        <p>Мне не хватает строк в теге style </p>
+        <p>Поэтому я решила добавить боковую панель.</p>
+    </aside>
+
+    </main>
+    <footer>
+        <p>и еще губку боба люблю</p>
+         <button id="gameButton" class="game-button">Пройти тест: кто ты из пони?</button>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
