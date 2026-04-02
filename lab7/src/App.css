@@ -1,4 +1,3 @@
-/* ====== Общие стили ====== */
 * {
   box-sizing: border-box;
 }
@@ -16,7 +15,6 @@ body {
   padding: 16px;
 }
 
-/* ====== Шапка сайта ====== */
 .site-header {
   background: radial-gradient(#ffc0fe, #ff60ff);
   padding: 16px;
@@ -36,7 +34,6 @@ body {
   padding: 10px 16px;
 }
 
-/* ====== Навигация ====== */
 .main-nav a {
   display: inline-block;
   padding: 10px 16px;
@@ -54,7 +51,6 @@ body {
   color: #000;
 }
 
-/* ====== Панели ====== */
 .panel {
   margin: 16px 0;
   background: #ffffff;
@@ -63,13 +59,11 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-/* ====== Заголовки форм ====== */
 .panel h2, .panel h3 {
   margin-top: 0;
   color: #000000;
 }
 
-/* ====== Кнопки ====== */
 button.button {
   cursor: pointer;
   border: none;
@@ -104,7 +98,6 @@ button.button {
   background: #d85050;
 }
 
-/* ====== Inputs и textarea ====== */
 input, textarea {
   width: 100%;
   margin: 8px 0;
@@ -116,7 +109,6 @@ input, textarea {
   font-size: 14px;
 }
 
-/* ====== Блоки состояния и результатов ====== */
 .state-box, .result-box {
   margin-top: 12px;
   padding: 12px;
@@ -125,14 +117,12 @@ input, textarea {
   color: #333;
 }
 
-/* ====== Формы ====== */
 .crud-forms {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* ====== Списки пользователей ====== */
 ul.user-list {
   list-style: none;
   padding: 0;
@@ -145,7 +135,6 @@ ul.user-list li {
   font-size: 14px;
 }
 
-/* ====== Адаптив ====== */
 @media(max-width:600px){
   .main-nav a { margin: 4px 4px 0 0; }
 }

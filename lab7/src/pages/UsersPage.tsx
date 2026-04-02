@@ -5,8 +5,6 @@ import UserList from "../components/UserList";
 
 const UsersPage: React.FC = () => {
   const { dispatch } = useUsers();
-
-  // Предзагрузка пользователей с API
   useEffect(() => {
     async function fetchUsers() {
       try {
