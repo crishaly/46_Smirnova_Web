@@ -1,0 +1,151 @@
+/* ====== Общие стили ====== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(#ffaee9, #ffcaff);
+  color: #2a2a2a;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ====== Шапка сайта ====== */
+.site-header {
+  background: radial-gradient(#ffc0fe, #ff60ff);
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 6px;
+  color: #010101;
+  padding: 10px 16px;
+}
+
+/* ====== Навигация ====== */
+.main-nav a {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.main-nav a:hover {
+  background: #b0b0b0;
+  color: #000;
+}
+
+/* ====== Панели ====== */
+.panel {
+  margin: 16px 0;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== Заголовки форм ====== */
+.panel h2, .panel h3 {
+  margin-top: 0;
+  color: #000000;
+}
+
+/* ====== Кнопки ====== */
+button.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin-top: 8px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.button-primary {
+  background: #7aa7c7;
+  color: #fff;
+}
+.button-primary:hover {
+  background: #5d88a5;
+}
+
+.button-success {
+  background: #6fcf97;
+  color: #fff;
+}
+.button-success:hover {
+  background: #49b67a;
+}
+
+.button-danger {
+  background: #ef7777;
+  color: #fff;
+}
+.button-danger:hover {
+  background: #d85050;
+}
+
+/* ====== Inputs и textarea ====== */
+input, textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #2a2a2a;
+  font-size: 14px;
+}
+
+/* ====== Блоки состояния и результатов ====== */
+.state-box, .result-box {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* ====== Формы ====== */
+.crud-forms {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ====== Списки пользователей ====== */
+ul.user-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+ul.user-list li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* ====== Адаптив ====== */
+@media(max-width:600px){
+  .main-nav a { margin: 4px 4px 0 0; }
+}
