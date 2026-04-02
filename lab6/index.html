@@ -29,37 +29,40 @@
   </section>
 
   <section id="users" class="panel">
-    <h2>dummyjson GET POST PATCH DELETE</h2>
-    <div class="crud-forms">
+  <h2>dummyjson GET POST PATCH DELETE</h2>
+  <div class="crud-forms">
 
-      <!-- GET -->
-      <form id="load-users-form">
-        <button type="button" class="button button-primary">GET пользователи</button>
-      </form>
+    <!-- GET -->
+    <form id="load-users-form">
+      <button type="button" class="button button-primary">GET пользователи</button>
+    </form>
 
-      <!-- POST -->
-      <form id="create-user-form">
-        <input id="new-user-name" name="firstName" type="text" placeholder="Имя" required>
-        <input id="new-user-lastname" name="lastName" type="text" placeholder="Фамилия" required>
-        <button type="submit" class="button button-success">POST создать</button>
-      </form>
+    <!-- Обновление списка -->
+    <button id="refresh-users" class="button button-success">Обновить список</button>
 
-      <!-- PATCH -->
-      <form id="update-user-form">
-        <input type="number" id="update-id" placeholder="ID" required>
-        <input type="text" id="update-name" placeholder="Новое имя" required>
-        <button type="submit" class="button button-primary">PATCH обновить</button>
-      </form>
+    <!-- POST -->
+    <form id="create-user-form">
+      <input id="new-user-name" name="firstName" type="text" placeholder="Имя" required>
+      <input id="new-user-lastname" name="lastName" type="text" placeholder="Фамилия" required>
+      <button type="submit" class="button button-success">POST создать</button>
+    </form>
 
-      <!-- DELETE -->
-      <form id="delete-user-form">
-        <input type="number" id="delete-id" placeholder="ID" required>
-        <button type="submit" class="button button-danger">DELETE</button>
-      </form>
+    <!-- PATCH -->
+    <form id="update-user-form">
+      <input type="number" id="update-id" placeholder="ID" required>
+      <input type="text" id="update-name" placeholder="Новое имя" required>
+      <button type="submit" class="button button-primary">PATCH обновить</button>
+    </form>
 
-    </div>
-    <div id="users-result" class="result-box">Результат операций появится здесь.</div>
-  </section>
+    <!-- DELETE -->
+    <form id="delete-user-form">
+      <input type="number" id="delete-id" placeholder="ID" required>
+      <button type="submit" class="button button-danger">DELETE</button>
+    </form>
+
+  </div>
+  <div id="users-result" class="result-box">Результат операций появится здесь.</div>
+</section>
 
   <section id="ipify" class="panel">
     <h2>ipify</h2>
@@ -67,6 +70,7 @@
     <div id="ip-state" class="state-box">IP ещё не получен.</div>
     <div id="ip-result" class="result-box"></div>
   </section>
+  
 
 </main>
 </body>
